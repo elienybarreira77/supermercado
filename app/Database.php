@@ -47,7 +47,7 @@ class DataBase{
         //extrair as chaves do array
         $fields = array_keys($array);
         //monta a query
-        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=?  WHERE '.$where;
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=?  WHERE id = '.$where;
         //executa a query
         $this->execute($query, array_values($array));
         return true;  
